@@ -1,0 +1,65 @@
+# iyildirim
+
+An [MCP](https://modelcontextprotocol.io) server for [Izzet Yildirim](https://iyildirim.com). Connect it to your AI agent and ask about his research, papers, CV, and availability.
+
+It is read-only and needs no sign-in. It answers from the public data on [iyildirim.com](https://iyildirim.com), including the full text of his published papers.
+
+## Connect
+
+**Claude Code**
+
+```sh
+claude mcp add iyildirim -- npx -y iyildirim
+```
+
+**Claude Desktop, Cursor, VS Code, Windsurf** (any client that launches local servers): add to the MCP config.
+
+```json
+{
+  "mcpServers": {
+    "iyildirim": { "command": "npx", "args": ["-y", "iyildirim"] }
+  }
+}
+```
+
+**No install:** most clients can connect straight to the hosted server, which is what this package forwards to.
+
+```sh
+claude mcp add --transport http iyildirim https://iyildirim.com/api/mcp
+```
+
+Claude, ChatGPT, and Cursor also accept `https://iyildirim.com/api/mcp` as a custom connector URL.
+
+## Then ask
+
+> What has Izzet published on I/O tracing?
+>
+> Read the system design section of the AgentStage paper and summarize it.
+>
+> Is Izzet a fit for this role? (paste a job description)
+
+## Tools
+
+| Tool                | What it does                                               |
+| ------------------- | ---------------------------------------------------------- |
+| `get_profile`       | Overview, what he is looking for, contact, profiles        |
+| `find_publications` | Search publications by topic, system, or venue             |
+| `get_publication`   | Everything public about one publication                    |
+| `search_papers`     | Search the full text of public papers for passages         |
+| `read_paper`        | Read a paper section by section                            |
+| `get_cv`            | Experience, education, service, certifications, and skills |
+
+## How it works
+
+This package is a thin stdio-to-HTTP bridge. It holds no tools or data of its own: each message goes to `https://iyildirim.com/api/mcp` and the reply comes back unchanged, so the tools are always as current as the site. No dependencies.
+
+Set `IYILDIRIM_MCP_URL` to point it at another endpoint, for example a preview deployment.
+
+## Develop
+
+```sh
+npm install
+npm run validate   # format check, types, tests, build
+```
+
+MIT licensed.

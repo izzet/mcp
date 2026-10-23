@@ -1,0 +1,46 @@
+{
+  "name": "iyildirim",
+  "version": "0.1.0",
+  "description": "MCP server for Izzet Yildirim: ask your AI agent about his research, papers, and CV.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "resume",
+    "cv",
+    "research"
+  ],
+  "author": "Izzet Yildirim <izzetcyildirim@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://iyildirim.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izzet/mcp.git"
+  },
+  "type": "module",
+  "bin": {
+    "iyildirim": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "validate": "npm run format:check && npm run check && npm test && npm run build",
+    "prepublishOnly": "npm run validate"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  }
+}
