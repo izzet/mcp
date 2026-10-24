@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.izzet/mcp",
+  "title": "Izzet Yildirim",
+  "description": "Ask your AI agent about Izzet Yildirim's research, papers, CV, and availability.",
+  "websiteUrl": "https://iyildirim.com",
+  "repository": {
+    "url": "https://github.com/izzet/mcp",
+    "source": "github"
+  },
+  "version": "0.1.2",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "iyildirim",
+      "version": "0.1.2",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://iyildirim.com/api/mcp"
+    }
+  ]
+}
