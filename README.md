@@ -52,8 +52,6 @@ Claude, ChatGPT, and Cursor also accept `https://iyildirim.com/api/mcp` as a cus
 | `search_paper_text`   | Search the full text of public papers for passages                               |
 | `search_publications` | Search the publication catalog by topic, system, or venue                        |
 
-Names follow one scheme: `search_` takes a query, `list_` enumerates the parts of one thing, `get_` fetches one thing. The server provides the list, so it can change; your agent always sees the current one.
-
 ## How it works
 
 This package is a thin stdio-to-HTTP bridge. It holds no tools or data of its own: each message goes to `https://iyildirim.com/api/mcp` and the reply comes back unchanged, so the tools are always as current as the site. No dependencies.
