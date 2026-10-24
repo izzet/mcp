@@ -42,14 +42,15 @@ Claude, ChatGPT, and Cursor also accept `https://iyildirim.com/api/mcp` as a cus
 
 ## Tools
 
-| Tool                | What it does                                               |
-| ------------------- | ---------------------------------------------------------- |
-| `get_profile`       | Overview, what he is looking for, contact, profiles        |
-| `find_publications` | Search publications by topic, system, or venue             |
-| `get_publication`   | Everything public about one publication                    |
-| `search_papers`     | Search the full text of public papers for passages         |
-| `read_paper`        | Read a paper section by section                            |
-| `get_cv`            | Experience, education, service, certifications, and skills |
+| Tool                  | What it does                                                                     |
+| --------------------- | -------------------------------------------------------------------------------- |
+| `get_cv_section`      | One section of his CV: experience, education, service, certifications, or skills |
+| `get_paper_section`   | The text of one section of a public paper                                        |
+| `get_profile`         | Start here: overview, what he is looking for, contact, links                     |
+| `get_publication`     | The catalog entry for one publication (summary, venue, abstract, links)          |
+| `list_paper_sections` | The sections of a public paper                                                   |
+| `search_paper_text`   | Search the full text of public papers for passages                               |
+| `search_publications` | Search the publication catalog by topic, system, or venue                        |
 
 ## How it works
 
