@@ -1,5 +1,7 @@
 # iyildirim
 
+[![npm](https://img.shields.io/npm/v/iyildirim)](https://www.npmjs.com/package/iyildirim)
+
 An [MCP](https://modelcontextprotocol.io) server for [Izzet Yildirim](https://iyildirim.com). Connect it to your AI agent and ask about his research, papers, CV, and availability.
 
 It is read-only and needs no sign-in. It answers from the public data on [iyildirim.com](https://iyildirim.com), including the full text of his published papers.
