@@ -66,12 +66,14 @@ npm run validate   # format check, types, tests, build
 
 ## Release
 
-Releases are published to npm by [`publish.yml`](.github/workflows/publish.yml) when a version tag is pushed.
+Releases are published to npm, and then listed in the [official MCP registry](https://registry.modelcontextprotocol.io) as `io.github.izzet/mcp`, by [`publish.yml`](.github/workflows/publish.yml) when a version tag is pushed.
 
-1. Bump `version` in `package.json` in a pull request and merge it.
+1. Bump `version` in `package.json` and in `server.json` (both `version` and `packages[0].version`) in a pull request and merge it. A test and the workflow check that they match.
 2. On `main`: `git tag v0.1.1 && git push origin v0.1.1` (the tag must match the version).
 
-To rehearse, run the workflow from the Actions tab: a manual run only does a dry run.
+To rehearse, run the workflow from the Actions tab: a manual run only does an npm dry run and validates `server.json`.
+
+The registry login uses GitHub OIDC, so it needs no secret.
 
 Publishing needs either a trusted publisher configured for this repo and `publish.yml` on npmjs.com (no secret), or an `NPM_TOKEN` repository secret.
 

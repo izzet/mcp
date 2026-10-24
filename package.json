@@ -1,6 +1,7 @@
 {
   "name": "iyildirim",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "mcpName": "io.github.izzet/mcp",
   "description": "MCP server for Izzet Yildirim: ask your AI agent about his research, papers, and CV.",
   "keywords": [
     "mcp",
